@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import {Route, Routes} from 'react-router-dom';
+// import CookieConsent, { Cookies } from "react-cookie-consent";
+import useContentful from "./helpers/useContentful";
+import Layout from "./components/sections/Layout";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Body from "./components/Body";
+import ErrorBanner from "./components/sections/ErrorBanner";
 
-function App() {
+export default function App() {
+
+  const [siteConfig, setSiteConfig] = useState([]);
+  const { getSiteConfig } = useContentful();
+  useEffect(() => {
+    getSiteConfig().then((response) => response && setSiteConfig(response));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header/>
+        <Routes>
+          <Route path="/:page" element={<Body siteConfigs={siteConfig} />}/>
+          <Route path="*" element={<Body siteConfigs={siteConfig} />} />
+        </Routes>
+      <Footer/>
+    </>
+  )
 }
-
-export default App;
