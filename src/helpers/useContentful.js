@@ -127,7 +127,46 @@ const useContentful = () => {
     }
   };
 
-  return { getHeaderSection, getHeroSection, getFAQSection, getFooterSection, getSiteConfig, getCTASection };
+  const getCustomerQuote = async () => {
+    try {
+      const entries = await client.getEntries({
+        content_type: "customerQuote",
+        select: "fields"
+      });
+      const sanitizedEntries = entries.items.map((item) => {
+        const avatar = item.fields.customerRepAvatar.fields;
+        return {
+          ...item.fields,
+          avatar
+        };
+      });
+      return sanitizedEntries;
+    } catch (error) {
+      console.log(`Error fetching customer quote section : ${error}`);
+    }
+  };
+
+  const getPricing = async () => {
+    try {
+      const entries = await client.getEntries({
+        content_type: "pricing",
+        select: "fields"
+      });
+      const sanitizedEntries = entries.items.map((item) => {
+        const banner = 'placeholder';
+        return {
+          ...item.fields,
+          banner
+        };
+      });
+      console.log('sanitizedEntries -> ', sanitizedEntries);
+      return sanitizedEntries;
+    } catch (error) {
+      console.log(`Error fetching faq section : ${error}`);
+    }
+  };
+  
+  return { getHeaderSection, getHeroSection, getFAQSection, getFooterSection, getSiteConfig, getCTASection, getCustomerQuote, getPricing };
 };
 
 export default useContentful;

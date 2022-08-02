@@ -15,7 +15,7 @@ export default function Body ({ siteConfigs }) {
         try {
             siteConfigs.map((config, index) => {
                 setSiteStatus(config.status);
-                console.log('config -> ', config);
+                //console.log('config -> ', config);
                 if (config.status[0].status === 'active') {
                     const pageProps = config.contentStructure[0].pages.find(element => element.url === ((page === undefined) ? '/':`/${page}`));
                     //console.log('pageProps -> ', pageProps);
@@ -47,16 +47,17 @@ export default function Body ({ siteConfigs }) {
                         });
                         setPageSections(sections);
                     } else {
-                        console.log('redirect to -> ', redirect.url);
+                        //console.log('redirect to -> ', redirect.url);
+                        navigate(redirect.url);
                     }
                 }
             });
             if (('*' in params)){
-                console.log('maybe its best to get some configs at this point', siteConfigs);
+                //console.log('maybe its best to get some configs at this point', siteConfigs);
                 navigate('/home');
             } 
         } catch (error) {
-            console.log('error -> ', error);
+            //console.log('error -> ', error);
             document.title = "Oops";
             setPageSections(<ErrorBanner/>);
         }

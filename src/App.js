@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import {Route, Routes} from 'react-router-dom';
-// import CookieConsent, { Cookies } from "react-cookie-consent";
 import useContentful from "./helpers/useContentful";
-import Layout from "./components/sections/Layout";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import ErrorBanner from "./components/sections/ErrorBanner";
 
 export default function App() {
 
@@ -20,10 +17,10 @@ export default function App() {
   return (
     <>
       <Header/>
-        <Routes>
-          <Route path="/:page" element={<Body siteConfigs={siteConfig} />}/>
-          <Route path="*" element={<Body siteConfigs={siteConfig} />} />
-        </Routes>
+      <Routes>
+        <Route path="/:page" element={<Body siteConfigs={siteConfig} />}/>
+        <Route path="*" element={<Body siteConfigs={siteConfig} />} />
+      </Routes>
       <Footer/>
     </>
   )
