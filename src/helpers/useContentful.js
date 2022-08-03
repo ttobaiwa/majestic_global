@@ -159,14 +159,51 @@ const useContentful = () => {
           banner
         };
       });
-      console.log('sanitizedEntries -> ', sanitizedEntries);
       return sanitizedEntries;
     } catch (error) {
-      console.log(`Error fetching faq section : ${error}`);
+      console.log(`Error fetching pricing section : ${error}`);
     }
   };
-  
-  return { getHeaderSection, getHeroSection, getFAQSection, getFooterSection, getSiteConfig, getCTASection, getCustomerQuote, getPricing };
+
+  const getFeatures = async () => {
+    try {
+      const entries = await client.getEntries({
+        content_type: "features",
+        select: "fields"
+      });
+      const sanitizedEntries = entries.items.map((item) => {
+        const banner = item.fields.banner.fields;
+        return {
+          ...item.fields,
+          banner
+        };
+      });
+      return sanitizedEntries;
+    } catch (error) {
+      console.log(`Error fetching features section : ${error}`);
+    }
+  };
+
+  const getExtendedFeatures = async () => {
+    try {
+      const entries = await client.getEntries({
+        content_type: "extendedFeatures",
+        select: "fields"
+      });
+      const sanitizedEntries = entries.items.map((item) => {
+        const banner = 'placeholder';
+        return {
+          ...item.fields,
+          banner
+        };
+      });
+      return sanitizedEntries;
+    } catch (error) {
+      console.log(`Error fetching features section : ${error}`);
+    }
+  };
+
+  return { getHeaderSection, getHeroSection, getFAQSection, getFooterSection, getSiteConfig, getCTASection, getCustomerQuote, getPricing, getFeatures, getExtendedFeatures };
 };
 
 export default useContentful;
