@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "contentful": "^9.1.32",
     "mlj-cookie": "^1.0.8",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
@@ -17,8 +18,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "npm run prettier",
+    "lint": "eslint src --ext .js",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "run lint && npm run test:run",
+    "test:run": "jest"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +49,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.4",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.30.1"
+    "eslint-plugin-react": "^7.30.1",
+    "prettier": "2.7.1"
   }
 }

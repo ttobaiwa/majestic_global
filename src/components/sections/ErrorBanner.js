@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 export default function ErrorBanner () {
-    return(
-        <section className="bg-gray-50 dark:bg-gray-800">
-            <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
-                <div className="max-w-screen-sm mx-auto text-center">
-                    <h2 className="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white">Oops</h2>
-                    <p className="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">it appears we have encountered some trouble accessing a resource you requested. Well it's not there...</p>
-                    <Link
-                        to="/" className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Let's go back home
-                    </Link>
-                </div>
-                
-            </div>
-        </section>
-    )
+	return (
+		<section className='bg-gray-50 dark:bg-gray-800'>
+			<div className='max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6'>
+				<div className='max-w-screen-sm mx-auto text-center'>
+					<h2 className='mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white'>Oops</h2>
+					<p className='mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg'>It appears we have encountered some trouble accessing a resource you requested. Please refresh this page...</p>
+					<Link
+						to='/' className='text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800'>Lets go back home
+					</Link>
+				</div>
+
+			</div>
+		</section>
+	)
 }

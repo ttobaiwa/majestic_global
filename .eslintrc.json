@@ -1,22 +1,33 @@
 {
+    "root": true,
     "env": {
-        "browser": true,
+        "node": true,
+		"browser":true,
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "standard"
+        "eslint:recommended",
+    	"plugin:react/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "js": true
         },
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+		"react-hooks"
     ],
     "rules": {
+		"indent": [
+            "error",
+            "tab"
+        ],
+		"react/react-in-jsx-scope": "off",
+		"react/prop-types": "off",
+		"no-undef": "off"
     }
 }
