@@ -1,40 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html class="h-100" lang="en">
+  <!-- <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link href="%PUBLIC_URL%/assets/css/loader.css" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.5/dist/cookieconsent.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/assets/css/loader.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.5/dist/cookieconsent.css"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+  </head> -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="A growing collection of ready to use components for the CSS framework Bootstrap 5">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
+    <link href="%PUBLIC_URL%/assets/css/loader.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.5/dist/cookieconsent.css"
+      rel="stylesheet"
+    />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <meta name="author" content="Tariro Tobaiwa">
+    <meta name="generator" content="Eleventy v2.0.0">
+    <meta name="HandheldFriendly" content="true">
+    <title>Majestic Groundsmiths</title>
+    <!-- <link rel="stylesheet" href="css/theme.min.css"> -->
+  
+    <style>
+      /* inter-300 - latin */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: local(''),
+          url('%PUBLIC_URL%/assets/fonts/inter-v12-latin-300.woff2') format('woff2'),
+          /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('%PUBLIC_URL%/assets/fonts/inter-v12-latin-300.woff') format('woff');
+        /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+  
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: local(''),
+          url('%PUBLIC_URL%/assets./fonts/inter-v12-latin-500.woff2') format('woff2'),
+          /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('%PUBLIC_URL%/assets./fonts/inter-v12-latin-500.woff') format('woff');
+        /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+  
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: local(''),
+          url('%PUBLIC_URL%/assets/fonts/inter-v12-latin-700.woff2') format('woff2'),
+          /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('%PUBLIC_URL%/assets/fonts/inter-v12-latin-700.woff') format('woff');
+        /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+    </style>
   </head>
-  <body>
+
+  <body data-bs-spy="scroll" data-bs-target="#navScroll">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
-		<div class="full-page-loader">
-		  <img width="200" src="%PUBLIC_URL%/assets/images/crown_purple.svg" alt="majestic" />
-		</div>
-	  </div>
+      <div class="full-page-loader">
+        <img
+          width="200"
+          src="%PUBLIC_URL%/assets/images/crown_purple.svg"
+          alt="majestic"
+        />
+      </div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -45,8 +102,40 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.5/dist/cookieconsent.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.5/dist/cookieconsent.js"
+    ></script>
     <script defer src="%PUBLIC_URL%/assets/js/consent.js"></script>
-	<script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // values from 0 to 3000, with step 50ms
+      });
+    </script>
+
+    <script>
+      let scrollpos = window.scrollY;
+      const header = document.querySelector(".navbar");
+      const header_height = header.offsetHeight;
+
+      const add_class_on_scroll = () =>
+        header.classList.add("scrolled", "shadow-sm");
+      const remove_class_on_scroll = () =>
+        header.classList.remove("scrolled", "shadow-sm");
+
+      window.addEventListener("scroll", function () {
+        scrollpos = window.scrollY;
+
+        if (scrollpos >= header_height) {
+          add_class_on_scroll();
+        } else {
+          remove_class_on_scroll();
+        }
+
+        console.log(scrollpos);
+      });
+    </script>
   </body>
 </html>
